@@ -1,0 +1,16 @@
+<body>
+<div class="container">
+{% if registered %}
+
+    <a href="/toDo/">Todo</a> says thankyou for  registering.
+{% else %}
+    Please register here!!
+    <form id="user_%orm" method="post" action="register.html" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ uform.as_p }}
+    {{ pform.as_p }}
+    <input type="submit" name="submit" value="Register">
+    </form>
+{% endif %}
+</div>
+</body>

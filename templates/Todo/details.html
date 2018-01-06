@@ -1,0 +1,83 @@
+
+
+{% extends 'Todo/base.html' %}
+{% block head_title %}DantehTodos || {{Todo.title}}{% endblock %}
+{% load staticfiles %}
+
+{% block myblock %}
+
+
+<div class="container container-fluid">
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="#">
+                        {% if Todo.logo.url %}
+                            <img src="{{ Todo.logo.url }}" class="img-responsive">
+
+                        {% else %}
+                            <h3>No image to display</h3>
+                        {% endif %}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+    <div class="col-sm-8 col-md-9 offset-4" style="padding:inherit">
+    <ul class="nav nav-pills" style="margin-bottom: 10px">
+        <li role="presentation" class="active"><a href="/">ViewAll</a> </li>
+        <li role="presentation"><a href="/new">Add New Todo</a> </li>
+    </ul>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h7>Hey on {{ Todo.Date}}&nbsp;remember</h7>
+                <table class="table">
+                    <thead>
+                    <tr>
+
+                        <th>{{ Todo.title }}</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                        <td>{{ Todo.Body}}
+
+                        </td>
+
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+                <div class="panel panel-info">
+                    <div class="panel-footer">
+                         <a target="_blank" href="#">
+                            <button type="button" class="btn-success">
+                            <span class="glyphicon glyphicon-view"></span>&nbsp;Edit</button>
+                        </a>
+                            <a href=""> <button type="button" class="button btn-success">
+                            &nbsp;Delete</button></a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}

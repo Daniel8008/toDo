@@ -1,0 +1,64 @@
+
+
+{% extends 'Todo/base.html' %}
+{% block head_title %}DantehTodos || Home{% endblock %}
+{% load static %}
+
+{% if user.username%}
+
+{% block myblock %}
+    {% if Todos %}
+
+    {% for item in Todos %}
+        <div class="container">
+        <div class="row">
+           
+        <div class="span4">
+            <ul style="list-style::none">
+          <li><a href="Todo/{{ item.id }}">{{ item.title }}: {{ item.Date }}</a></li>
+                 <div class="span3 offset2"> {{ item.text_preview }}</div>
+            </ul>
+
+        </div>
+
+
+
+
+       
+
+    {% endfor %}
+        {% else %}
+  
+           <h2>No current Todos</h2>
+    {% endif %}
+
+
+
+
+ </div>
+</div>
+{% endblock %}
+
+{% else %}
+    You need to <a href="register.html">Register</a>
+{% endif %}
+
+ <!-- <!DOCTYPE html>
+ <html>
+ <head>
+     <title>ToDo Store</title>
+ </head>
+ <body>
+ <h1>Welcome to ToDos</h1>
+ {% if user.username %}
+    <p>
+    Welcome {{user.username}}!</p>
+    Content will be here...
+    <a href="logout">Logout</a>
+    {% else %}
+        <p>Welcome anonymous user!
+        You need to <a href="/login/">Login</a></p>
+        {% endif %}
+ 
+ </body>
+ </html> -->

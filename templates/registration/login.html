@@ -1,0 +1,16 @@
+{% extends 'Todo/base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}Todo||Login{% endblock %}
+<div id="content">
+{% block myblock %}
+    <h2>Login</h2>
+    <form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <button type="submit">Login</button>
+        </form>
+{% endblock%}
+</div>

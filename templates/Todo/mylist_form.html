@@ -1,0 +1,15 @@
+{% extends 'Todo/base.html' %}
+{% load staticfiles %}
+<div class="container">
+{% block myblock %}
+
+<form method="post">
+{% csrf_token %}
+welcome here
+    {{ form.as_p }}
+    <input type="submit" value="submit">Submit
+   </form>
+
+
+{% endblock %}
+  </div>
